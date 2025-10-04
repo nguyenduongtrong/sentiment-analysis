@@ -3,9 +3,6 @@
 Một ứng dụng mẫu dùng Python + Hugging Face + Streamlit để phân tích cảm xúc (positive / negative / neutral) — mục tiêu cho tiếng Việt.
 
 ---
-Thành viên nhóm:
-Dương Trọng Nguyên - 2591315
-Lê Trương Tiến Bảo - 2591301
 
 ## 📌 Mô tả
 
