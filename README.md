@@ -1,14 +1,19 @@
 # Sentiment Analysis (Phân tích cảm xúc)
 
 Một ứng dụng mẫu dùng Python + Hugging Face + Streamlit để phân tích cảm xúc (positive / negative / neutral) — mục tiêu cho tiếng Việt.
+Giao diện cho phép so sánh kết quả của 3 mô hình sentiment phổ biến.
 
 ---
 
 ## 📌 Mô tả
 
-- Dự án này là một ứng dụng web đơn giản để **phân tích cảm xúc** (sentiment) của văn bản tiếng Việt.  
-- Sử dụng mô hình `mr4/phobert-base-vi-sentiment-analysis` từ Hugging Face để đưa ra dự đoán về cảm xúc: **positive / negative / neutral**.  
-- Giao diện web được xây dựng bằng **Streamlit** để người dùng dễ nhập văn bản, xem kết quả và biểu đồ xác suất.
+- Dự án này là một ứng dụng web đơn giản để **phân tích cảm xúc** (sentiment) của văn bản tiếng Việt.
+- Phân tích cảm xúc (tích cực / tiêu cực / trung lập) cho văn bản tiếng Việt.
+- Sử dụng 3 mô hình từ Hugging Face:
+  - `mr4/phobert-base-vi-sentiment-analysis`
+  - `5CD-AI/Vietnamese-Sentiment-visobert`
+  - `wonrax/phobert-base-vietnamese-sentiment`
+- Giao diện Streamlit: 3 ô nhập liệu nằm ngang, mỗi ô tương ứng một model, kết quả hiển thị dạng bảng phía dưới để dễ so sánh.
 
 ---
 
@@ -97,7 +102,9 @@ Ví dụ:
 
 ## ⚠️ Lưu ý & cải thiện
 
-- Mô hình `mr4/phobert-base-vi-sentiment-analysis` có thể không chính xác nếu văn bản chứa từ lóng, emoji, hoặc ngữ cảnh khó xác định  
+- Lần chạy đầu sẽ tải model từ Hugging Face (cần internet, có thể mất thời gian).
+- Ứng dụng đã cache pipeline để tăng tốc cho lần chạy sau.
+- Nhãn trả về có thể khác nhau giữa các model (`LABEL_0`, `LABEL_1`, ... hoặc tên cụ thể). Có thể tự map sang tiếng Việt nếu muốn.
 - Với dữ liệu thực tế (bình luận mạng xã hội, phản hồi khách hàng), bạn có thể cần fine-tune lại hoặc sử dụng mô hình khác  
 - Có thể mở rộng app để:
   - Nhập **nhiều câu cùng lúc** và phân tích từng câu riêng biệt  
@@ -107,13 +114,13 @@ Ví dụ:
 
 ---
 
-## 🛠 Một số mô hình tiếng Việt thay thế
+## 🔧 Các model sử dụng
 
-- `5CD-AI/Vietnamese-Sentiment-visobert`  
-- `wonrax/phobert-base-vietnamese-sentiment`  
-- `edith81/phobert_vietnamese_sentiment_analysis`  
+- `mr4/phobert-base-vi-sentiment-analysis`
+- `5CD-AI/Vietnamese-Sentiment-visobert`
+- `wonrax/phobert-base-vietnamese-sentiment`
 
-Bạn có thể thử thay đổi `MODEL_NAME` trong `app.py` để dùng mô hình khác và xem kết quả so sánh.
+Bạn có thể thêm/thay đổi model trong file `main.py` (dictionary `MODEL_INFOS`).
 
 ---
 
