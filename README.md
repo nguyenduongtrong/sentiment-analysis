@@ -12,7 +12,7 @@ Giao diện cho phép so sánh kết quả của 3 mô hình sentiment phổ bi�
 - Sử dụng 3 mô hình từ Hugging Face:
   - `mr4/phobert-base-vi-sentiment-analysis`
   - `5CD-AI/Vietnamese-Sentiment-visobert`
-  - `wonrax/phobert-base-vietnamese-sentiment`
+  - `tabularisai/multilingual-sentiment-analysis`
 - Giao diện Streamlit: 3 ô nhập liệu nằm ngang, mỗi ô tương ứng một model, kết quả hiển thị dạng bảng phía dưới để dễ so sánh.
 
 ---
@@ -118,7 +118,7 @@ Ví dụ:
 
 - `mr4/phobert-base-vi-sentiment-analysis`
 - `5CD-AI/Vietnamese-Sentiment-visobert`
-- `wonrax/phobert-base-vietnamese-sentiment`
+- `tabularisai/multilingual-sentiment-analysis`
 
 Bạn có thể thêm/thay đổi model trong file `main.py` (dictionary `MODEL_INFOS`).
 
